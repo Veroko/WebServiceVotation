@@ -1,0 +1,133 @@
+METODOS RESTful y HTTP DIGEST ACCESs
+
+user:
+pass:
+
+post 	-> Agregar
+get 	-> Obtener
+delete 	->Borrar
+put 	-> Updateeeear
+
+que quiero que haga
+
+admin++
+con un post -> Agregar weones :3
+con get obtener lista ->
+
+
+Admin++
+.-------------------------------------------------------------------.
+Clienta al servidor
+post/api/v2/agregar_personas //(weones == votantes)
+
+{"id" : "2132132",
+ "rut" : "1654564-6",
+ "Nombre" : "Nombre...",
+ "Nacionalidad" :
+	{
+	 "Nacionalidad" : "Chileno"
+	},
+ "Pais" :
+	{
+	 "Pais" : "Chile"
+	},
+ "Habilitado para sufragar" : "SI"
+}
+---------------------------------------------------------------
+post /api/v2/agregar_candidatos //(otros_weones == candidatos)
+
+{
+ "id" : "1",
+ "persona(fk)" : "1",
+ "Partido_politicos" : "asd"
+}
+---------------------------------------------------------------
+get /api/v2/candidato
+
+{"Candidatos":
+	[{"id" : "1",
+ 	"Nombre_candidato" : "El weas con sueño",
+ 	"Rut" : "178372153",
+ 	"PArtido Politicos" : "asd"},
+
+	{"id" : "298564",
+ 	"Nombre_candidato" : "El weas con tuto",
+ 	"Rut" : "17987654",
+ 	"PArtido Politicos" : "asd2"},
+	]
+}
+-----------------------------------------------------------------
+get/api/v2/candidato/1
+
+{"Candidatos":
+	{"id" : "1",
+ 	"Nombre_candidato" : "El weas con sueño",
+ 	"Rut" : "178372153",
+ 	"PArtido Politicos" : "asd"},
+
+}
+
+-----------------------------------------------------------------
+get /api/v2/voto  OR  /api/v2/voto/1 //todas las personas
+
+{voto:
+ 	[
+	 {
+	  "cantVotos" : "cantidad votos",
+ 	  "candidato" : 1
+	 },
+
+	 {
+	  "cantVotos" : "cantidad votos",
+ 	  "candidato" : 2
+	 },
+
+	 {
+	  "cantVotos" : "cantidad votos",
+ 	  "candidato" : 3
+	 }
+	]
+}
+
+post /api/v2/voto
+
+{
+ "id" : "23213",
+ "personas" : 1,
+ "candidato" : 3
+}
+
+---------------------------------------------------------
+get /api/v2/pais OR get /api/v2/pais/1
+
+"Pais" : 
+{
+ [
+  {
+   "id" : "23213",
+   "pais" : "Chile"
+  },
+  {
+   "id" : "23214",
+   "pais" : "Nigeria",
+  },
+  {
+   "id" : "23214",
+   "pais" : "Japon",
+  }
+ ]
+}
+
+--------------------------------------------------------------
+ERRORES
+
+{AUtenticacion fallida}
+{Problemas de conexion con el servidor}
+{Informacion requerida no encontrada}
+{LeÑee}
+
+
+
+
+
+
