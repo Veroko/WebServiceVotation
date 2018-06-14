@@ -1,5 +1,5 @@
 create database votos_sistem;
-
+--drop database votos_sistem;
 use votos_sistem;
 
 create table pais(
@@ -20,6 +20,12 @@ create table partido(
     PRIMARY KEY(id)
 );
 
+create table tipo_usuario(
+    id INT AUTO_INCREMENT,
+    privilegio VARCHAR(50),
+    PRIMARY KEY(id)
+);
+
 create table persona(
     id INT AUTO_INCREMENT,
     rut INT UNIQUE,
@@ -34,26 +40,43 @@ create table persona(
     FOREIGN KEY(tipo_usuario_fk) REFERENCES tipo_usuario(id)
 );
 
-create table tipo_usuario(
-    id INT AUTO_INCREMENT,
-    privilegio VARCHAR(50),
-    PRIMARY KEY(id)
-);
+
 
 create table candidato(
     id INT AUTO_INCREMENT,
     persona_fk INT UNIQUE,
     partido_fk int,
-    PRIMARY KEY(id)
-    FOREIGN KEY(persona_fk) REFERENCES persona(rut),
+    PRIMARY KEY(id),
+    FOREIGN KEY(persona_fk) REFERENCES persona(id),
     FOREIGN KEY(partido_fk) REFERENCES partido(id)
 );
+
+SELECT candidato.id, persona.rut, persona.nombre, partido.nombre_partido
+FROM candidato, persona, partido
+WHERE candidato.persona_fk = persona.id AND candidato.partido_fk = partido.id;
+
+SELECT candidato.id, persona.rut, persona.nombre, partido.nombre_partido
+FROM candidato, persona, partido
+WHERE candidato.persona_fk = persona.id AND candidato.partido_fk = partido.id AND
+candidato.id = 1
+
 
 create table voto(
     id INT AUTO_INCREMENT,
     persona_fk INT UNIQUE,
     candidato_fk INT,
     PRIMARY KEY(id),
-    FOREIGN KEY(persona_fk) REFERENCES persona(rut),
+    FOREIGN KEY(persona_fk) REFERENCES persona(id),
     FOREIGN KEY(candidato_fk) REFERENCES candidato(id)
 );
+
+SELECT candidato_fk as 'candidato', count(persona_fk) as 'cantidad' from voto
+group by candidato_fk = 1
+
+
+SELECT 
+
+insert into pais values(null, 'chile');
+insert into pais values(null, 'Rusia');
+
+SELECT count(id) FROM pais;
