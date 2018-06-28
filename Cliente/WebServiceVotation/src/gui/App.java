@@ -77,10 +77,12 @@ public class App extends javax.swing.JFrame {
         btn_menu_usuario_listar = new javax.swing.JButton();
         btn_menu_usuario_votar = new javax.swing.JButton();
         btn_menu_usuario_Estadisticas = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
         jframe_listar_candidatos = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         panel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        btn_volver_lista = new javax.swing.JButton();
         jframe_votar = new javax.swing.JFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         panel1 = new javax.swing.JPanel();
@@ -96,15 +98,14 @@ public class App extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txt_inicio_rut = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         btn_inicio_ingreso = new javax.swing.JButton();
-        txt_inicio_clave = new javax.swing.JPasswordField();
 
         jframe_menu_usuario.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        jframe_menu_usuario.setMinimumSize(new java.awt.Dimension(569, 483));
+        jframe_menu_usuario.setMinimumSize(new java.awt.Dimension(570, 525));
 
         panel_menu_usuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Menú", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18))); // NOI18N
+        panel_menu_usuario.setMinimumSize(new java.awt.Dimension(550, 620));
+        panel_menu_usuario.setPreferredSize(new java.awt.Dimension(550, 1000));
 
         btn_menu_usuario_listar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btn_menu_usuario_listar.setText("Consultar lista de candidatos");
@@ -130,17 +131,29 @@ public class App extends javax.swing.JFrame {
             }
         });
 
+        btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_menu_usuarioLayout = new javax.swing.GroupLayout(panel_menu_usuario);
         panel_menu_usuario.setLayout(panel_menu_usuarioLayout);
         panel_menu_usuarioLayout.setHorizontalGroup(
             panel_menu_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menu_usuarioLayout.createSequentialGroup()
+            .addGroup(panel_menu_usuarioLayout.createSequentialGroup()
                 .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(panel_menu_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_menu_usuario_Estadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_menu_usuario_votar, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_menu_usuario_listar))
-                .addGap(100, 100, 100))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menu_usuarioLayout.createSequentialGroup()
+                        .addGroup(panel_menu_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_menu_usuario_Estadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_menu_usuario_votar, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_menu_usuario_listar))
+                        .addGap(100, 100, 100))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menu_usuarioLayout.createSequentialGroup()
+                        .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))))
         );
         panel_menu_usuarioLayout.setVerticalGroup(
             panel_menu_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +164,9 @@ public class App extends javax.swing.JFrame {
                 .addComponent(btn_menu_usuario_Estadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btn_menu_usuario_votar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout jframe_menu_usuarioLayout = new javax.swing.GroupLayout(jframe_menu_usuario.getContentPane());
@@ -172,7 +187,7 @@ public class App extends javax.swing.JFrame {
         );
 
         jframe_listar_candidatos.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        jframe_listar_candidatos.setMinimumSize(new java.awt.Dimension(458, 413));
+        jframe_listar_candidatos.setMinimumSize(new java.awt.Dimension(458, 473));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -182,6 +197,13 @@ public class App extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setText("Candidatos a la presidencia: ");
+
+        btn_volver_lista.setText("Volver");
+        btn_volver_lista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_volver_listaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jframe_listar_candidatosLayout = new javax.swing.GroupLayout(jframe_listar_candidatos.getContentPane());
         jframe_listar_candidatos.getContentPane().setLayout(jframe_listar_candidatosLayout);
@@ -193,7 +215,10 @@ public class App extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(jframe_listar_candidatosLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 87, Short.MAX_VALUE)))
+                        .addGap(0, 87, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jframe_listar_candidatosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_volver_lista, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jframe_listar_candidatosLayout.setVerticalGroup(
@@ -202,7 +227,9 @@ public class App extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(btn_volver_lista, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -327,12 +354,6 @@ public class App extends javax.swing.JFrame {
         txt_inicio_rut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txt_inicio_rut.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Ingrese su clave: ");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("(Clave de registro civil)");
-
         btn_inicio_ingreso.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_inicio_ingreso.setText("Ingresar");
         btn_inicio_ingreso.addActionListener(new java.awt.event.ActionListener() {
@@ -341,28 +362,10 @@ public class App extends javax.swing.JFrame {
             }
         });
 
-        txt_inicio_clave.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txt_inicio_clave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
         javax.swing.GroupLayout panel_inicioLayout = new javax.swing.GroupLayout(panel_inicio);
         panel_inicio.setLayout(panel_inicioLayout);
         panel_inicioLayout.setHorizontalGroup(
             panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_inicioLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(panel_inicioLayout.createSequentialGroup()
-                        .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_inicio_rut)
-                            .addComponent(txt_inicio_clave, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))))
-                .addContainerGap(110, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_inicioLayout.createSequentialGroup()
                 .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,27 +375,29 @@ public class App extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_inicioLayout.createSequentialGroup()
                         .addComponent(btn_inicio_ingreso)
                         .addGap(211, 211, 211))))
+            .addGroup(panel_inicioLayout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(txt_inicio_rut, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panel_inicioLayout.setVerticalGroup(
             panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_inicioLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(86, 86, 86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_inicio_rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panel_inicioLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addGap(30, 30, 30)
-                .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_inicio_clave)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(92, 92, 92)
                 .addComponent(btn_inicio_ingreso)
                 .addGap(30, 30, 30))
         );
@@ -499,11 +504,21 @@ public class App extends javax.swing.JFrame {
 
         System.out.println("id Candidato: " + getSelectedButtonText(grupo));
         System.out.println("id persona: " + d.getPersona(rut).getId());
-        d.votar(d.getPersona(rut), getSelectedButtonText(grupo));
 
-        JOptionPane.showConfirmDialog(this, "Usted sera redirigido", "Gracias por Votar", JOptionPane.INFORMATION_MESSAGE);
-        jframe_votar.setVisible(false);
-        this.setVisible(true);
+        if ( getSelectedButtonText(grupo) == null) {
+            JOptionPane.showConfirmDialog(this, "Usted ya ha votado", "Atención", JOptionPane.CLOSED_OPTION);
+            jframe_votar.setVisible(false);
+            jframe_menu_usuario.setVisible(true);
+        } else {
+
+            d.votar(d.getPersona(rut), getSelectedButtonText(grupo));
+
+            JOptionPane.showConfirmDialog(this, "Usted sera redirigido", "Gracias por Votar", JOptionPane.CLOSED_OPTION);
+            jframe_votar.setVisible(false);
+            this.setVisible(true);
+
+        }
+
 //        System.out.println("id partido: "+getSelectedButtonText(grupo));
 //        System.out.println("Id Partido: "+d.getPartidoId(getSelectedButtonText(grupo)));
     }//GEN-LAST:event_btn_votarActionPerformed
@@ -515,7 +530,7 @@ public class App extends javax.swing.JFrame {
         List<String> nombres = new ArrayList<>();
         List<Integer> votos = new ArrayList<Integer>();
 
-        final CategoryChart chart = new CategoryChartBuilder().width(200).height(200).xAxisTitle("Candidatos").yAxisTitle("Cant. Votos").title("Votaciones").build();
+        final CategoryChart chart = new CategoryChartBuilder().width(800).height(500).xAxisTitle("Candidatos").yAxisTitle("Cant. Votos").title("Votaciones").build();
 
         for (Resultado r : result) {
 
@@ -528,16 +543,14 @@ public class App extends javax.swing.JFrame {
         }
         chart.addSeries("Votaciones", nombres, votos);
 //        chart.addSeries("Votaciones", new double[]{2,3,4},new double[]{5,6,7});
-        
-        
+
         sw = new SwingWrapper<>(chart);
-        
-        
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 sw.displayChart().setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-                
+
             }
         }).start();
 //        javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -562,6 +575,17 @@ public class App extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btn_menu_usuario_EstadisticasActionPerformed
+
+    private void btn_volver_listaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_volver_listaActionPerformed
+        jframe_listar_candidatos.setVisible(false);
+        jframe_menu_usuario.setVisible(true);
+    }//GEN-LAST:event_btn_volver_listaActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        jframe_menu_usuario.setVisible(false);
+        this.setVisible(true);
+        txt_inicio_rut.setText(null);
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -611,14 +635,14 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton btn_menu_usuario_Estadisticas;
     private javax.swing.JButton btn_menu_usuario_listar;
     private javax.swing.JButton btn_menu_usuario_votar;
+    private javax.swing.JButton btn_salir;
+    private javax.swing.JButton btn_volver_lista;
     private javax.swing.JButton btn_votar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -633,7 +657,6 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JPanel panel_inicio;
     private javax.swing.JPanel panel_menu_admin;
     private javax.swing.JPanel panel_menu_usuario;
-    private javax.swing.JPasswordField txt_inicio_clave;
     private javax.swing.JTextField txt_inicio_rut;
     // End of variables declaration//GEN-END:variables
 
